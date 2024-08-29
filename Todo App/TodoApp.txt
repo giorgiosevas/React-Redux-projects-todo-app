@@ -1,0 +1,15 @@
+(1)Sthn arxh kanoume install to tailwindcss apo to site tou. Eukolh diadikasia.
+
+
+
+(1)Before starting Redux I have to define how many actions and states I will have. So ,
+
+Actions(states) :
+  1.Add todo
+  2.Search action
+  3.All
+  4.completed
+  5.incomplete
+  6.toggle
+  7.delete
+  8.make all completed
