@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import { Provider } from 'react-redux'
 import './App.css'
+import store from './redux/store'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
+    <Provider store={store}>
       <h1 className='text-5xl font-bold'>Hello Seva!</h1>
-    </>
+    </Provider>
   )
 }
 
