@@ -1,13 +1,13 @@
-import React from "react";
 import { useState } from "react";
-import { BsPlus } from "react-icons/bs";
+import { BsPlus, BsSearch } from "react-icons/bs";
 import { useDispatch } from "react-redux";
-import { addTodo } from "../redux/actions";
+import { addTodo, updateSearchTerm } from "../redux/actions";
+import FilterButton from "./FilterButton";
 
 const Todo = () => {
   const dispatch = useDispatch();
   const [newTodoText, setNewTodoText] = useState("");
-  //console.log("newTodoText->", newTodoText);
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleAddTodo = (text) => {
     //here we'll dispatch action:
@@ -21,6 +21,11 @@ const Todo = () => {
     }
   };
 
+  const handleSearchChange = (value) => {
+    setSearchTerm(value);
+    dispatch(updateSearchTerm(value));
+  };
+
   return (
     <div className="max-w-4xl mx-auto sm:mt-8 p-4 bg-gray-100 rounded">
       <h2 className="mt-3 mb-6 text-2xl font-bold text-center uppercase">
@@ -28,7 +33,7 @@ const Todo = () => {
       </h2>
 
       {/*Input text and btn*/}
-      <div className="flex items-center">
+      <div className="flex items-center mb-4">
         <input
           value={newTodoText}
           onChange={(e) => {
@@ -44,8 +49,32 @@ const Todo = () => {
           className="ml-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-500 focus:outline-none"
           onClick={handleAddTodoClick}
         >
-          <BsPlus />
+          <BsPlus size={20} />
         </button>
+      </div>
+
+      {/*Filter and Search*/}
+      <div className="flexs flex-col sm:flex-row items-center justify-between gap-4">
+        <FilterButton />
+        <div className="flex items-center mb-4">
+          <input
+            className="flex-grow p-2 border-b-2 border-gray-300 focus:outline-none focus:border-blue-500"
+            value={searchTerm}
+            onChange={(e) => {
+              handleSearchChange(e.target.value);
+            }}
+            type="text"
+            name="searchInput"
+            id="searchInput"
+            placeholder="Search Todos"
+          ></input>
+          <button
+            className="ml-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-500 focus:outline-none"
+            onClick={handleSearchChange}
+          >
+            <BsSearch size={20} />
+          </button>
+        </div>
       </div>
     </div>
   );
