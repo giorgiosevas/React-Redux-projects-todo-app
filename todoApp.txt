@@ -1,0 +1,36 @@
+(1)Sthn arxh kanoume install to tailwindcss apo to site tou. Eukolh diadikasia.
+
+(2)Before starting Redux I have to define how many actions and states I will have. So ,
+
+Actions(states) :
+  1.Add todo section
+  2.Search action
+  3.All(filtering actions)
+  4.completed(the button)
+  5.incomplete
+  6.toggle(in each row of the notes)
+  7.delete(in each row of the notes)
+  8.make all completed(in each row of the notes)
+
+  (3)Afou katagrapsoume ta actions(states) san business kinhsh, meta 8a ftiaksoume ena fakelo redux , kai mesa 8a exoume:
+  1.actionTypes.js opou ekei mesa 8a kanoume define ta action mas. Edw apla orizw auta ta 8 actions pou egrapsa sto (2).
+  2.actions.js opou ekei 8a leme ti kanei h ka8emia action. Edw ftiaxnoume th ka8e function-action kai th kanoume export meta!
+  >>Sto addTodo vazoume text giati 8a grafoume kapoio keimeno mesa placeholder kai auto otan paw to button 8a ginetai ena todo.
+  >>Sto toggle vazw id giati 8a pernaei ena id kai tou leei an 8a ginetai to keimeno strikethrough.
+
+  (4)Ystera ftiaxnw ena fakelo reducers-functions.
+  >>einai sthn ousia arrow functions kai exoun 2 parametrous state kai action.Kai meta sto telos ton ka8e reducer ton kanoume export default.
+  >>Kai prepei na exoume kai ena object initialState opou 8a exw tis arxikes times stous reducers.
+  >>Mesa sto todo grafoume switch elegxo giati mas dinei megalutero flexibility.\
+  >>Sto switch mesa auto pairnei ws key to "action.type" giati mesa sta actions.js exoume "type".
+  >>Prwto case einai to "ADD_TODO". Meta to "TOGGLE_TODO".
+
+  (5)Meta friaxnw ena fakelo kai to onomazw store.
+
+  (6)Meta ftiaxnw fakelo components.
+  Diagafw sto App.jsx to lektiko.
+  Ftiaxnei meta mesa sto components Todo.jsx .
+  Ystera ekei 8a ftiaksei to style.
+  akoma ftiaxnei kai to button.
+
+  (7)Ftiaxnei mesda sto Todo ena state newTodoText.
