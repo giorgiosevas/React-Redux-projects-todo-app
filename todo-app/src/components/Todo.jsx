@@ -1,6 +1,6 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { BsPlus, BsSearch } from "react-icons/bs";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTodo, updateSearchTerm } from "../redux/actions";
 import FilterButton from "./FilterButton";
 import TodoList from "./TodoList";
@@ -71,10 +71,7 @@ const Todo = () => {
             id="searchInput"
             placeholder="Search Todos"
           ></input>
-          <button
-            className="ml-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-500 focus:outline-none"
-            onClick={handleSearchChange}
-          >
+          <button className="ml-4 p-2 bg-blue-500 text-white rounded hover:bg-blue-500 focus:outline-none">
             <BsSearch size={20} />
           </button>
         </div>
